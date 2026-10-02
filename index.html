@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portafolio de proyectos</title>
+<meta name="description" content="Portafolio de proyectos de María Fernanda Rosas Briones: frontend, UI/UX, APIs y datos. Querétaro, México.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff5f8;--bg2:#ffe6ee;--card:#fff;--tx:#2a1620;--mut:#7d5565;--ac:#d6336c;--ac2:#ff7ab0;--bd:#f5c6d6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0509;--bg2:#1a0a12;--card:#150a10;--tx:#fbeaf1;--mut:#c79aae;--ac:#ff4d94;--ac2:#ff9cc6;--bd:#3a1527}}
+:root[data-theme="dark"]{--bg:#0e0509;--bg2:#1a0a12;--card:#150a10;--tx:#fbeaf1;--mut:#c79aae;--ac:#ff4d94;--ac2:#ff9cc6;--bd:#3a1527}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px;height:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Outfit,system-ui,sans-serif;transition:background .3s,color .3s}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;margin:0}
+a{color:inherit}
+.w{max-width:1040px;margin:auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--ac2);outline-offset:2px}
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;gap:4px;height:56px;overflow-x:auto}
+nav .l{text-decoration:none;color:var(--mut);padding:6px 11px;border-radius:99px;font-size:14px;white-space:nowrap}
+nav .l:hover{color:var(--ac);background:var(--bg2)}
+nav b{font:800 18px Fraunces,serif;margin-right:10px;white-space:nowrap}
+.sp{flex:1}
+.btn{font:inherit;font-size:14px;cursor:pointer;border:1px solid var(--ac);background:transparent;color:var(--ac);padding:7px 15px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:.2s}
+.btn:hover,.btn.p{background:var(--ac);color:#fff}
+.btn.p:hover{filter:brightness(1.1)}
+.hero{padding:72px 0 56px;background:radial-gradient(60% 80% at 90% 0,var(--bg2),transparent)}
+.hero .w{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(40px,7.5vw,78px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{color:var(--ac)}
+.hero p{color:var(--mut);max-width:520px;font-size:17px;margin:18px 0 0}
+.role{color:var(--ac);font-size:clamp(17px,2.6vw,23px);margin-top:14px;min-height:1.7em}
+.role::after{content:"|";animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--mut);margin-bottom:16px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fbf71}
+.demo{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px}
+.demo small{display:block;color:var(--mut);font-size:13px;margin-top:8px}
+canvas{width:100%;height:150px;display:block}
+.seg{display:inline-flex;border:1px solid var(--bd);border-radius:99px;padding:3px;margin-bottom:8px}
+.seg button{font:inherit;font-size:13px;border:0;background:none;color:var(--mut);padding:5px 13px;border-radius:99px;cursor:pointer}
+.seg button.on{background:var(--ac);color:#fff}
+section{padding:60px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:clamp(28px,5vw,42px);margin-bottom:8px}
+.sub{color:var(--mut);margin:0 0 30px;max-width:620px}
+.case{display:grid;grid-template-columns:1fr 1.2fr;gap:0;background:var(--card);border:1px solid var(--bd);border-radius:20px;overflow:hidden;margin-bottom:22px}
+.case .vis{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px}
+.case .vis h3{font-size:clamp(24px,3.4vw,34px)}
+.case .vis .big{font:800 clamp(52px,8vw,84px)/1 Fraunces,serif}
+.case .vis span{font-size:14px;opacity:.92}
+.case .bd{padding:26px}
+.case .meta{color:var(--ac);font-size:14px;margin-bottom:6px}
+.case dl{margin:14px 0 0;display:grid;gap:12px}
+.case dt{font:600 15px Fraunces,serif;color:var(--ac)}
+.case dd{margin:2px 0 0;color:var(--mut);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font-size:12.5px;padding:3px 11px;border-radius:99px;background:var(--bg2);border:1px solid var(--bd);color:var(--ac)}
+.case:nth-of-type(even) .vis{order:2}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{font:inherit;font-size:14px;cursor:pointer;background:var(--card);color:var(--tx);border:1px solid var(--bd);padding:6px 15px;border-radius:99px}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.card .tags{margin-top:12px}
+.tl{border-left:2px solid var(--bd);margin-left:6px}
+.job{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:24px;margin:0 0 18px 22px;position:relative}
+.job::before{content:"";position:absolute;left:-31px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--ac);border:3px solid var(--bg)}
+.job .when{color:var(--ac);font-size:14px;font-weight:500}
+.job h3{font-size:22px;margin:4px 0 2px}
+.job .org{color:var(--mut);font-size:15px;margin-bottom:10px}
+.job ul{margin:0;padding-left:20px;color:var(--mut);font-size:15px}
+.job li{margin:0 0 6px}
+.job li::marker{color:var(--ac)}
+section.alt+section#experiencia{background:var(--bg)}
+.ic{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em;flex:none}
+.btn .ic{margin-right:5px}
+.hero .w{grid-template-columns:1fr}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:40px;max-width:700px}
+.stats div{border-left:3px solid var(--ac);padding-left:14px;font:800 32px Fraunces,serif}
+.stats i{font-style:normal}.stats span{display:block;font:400 14px Outfit,sans-serif;color:var(--mut)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s,border-color .2s}.rv.in{opacity:1;transform:none}
+.card:hover,.job:hover{transform:translateY(-3px);border-color:var(--ac)}
+.demo{margin-top:20px}
+.repo{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.repo .chip{text-decoration:none;font-size:13px}
+.sec{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.sc{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;cursor:pointer;margin-bottom:10px;transition:.2s}
+.sc:hover,.sc.on{border-color:var(--ac);transform:translateX(4px)}
+.sc .ic{color:var(--ac);width:22px;height:22px}
+.scd{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;color:var(--mut);font-size:15px;min-height:76px}
+.term{background:#1a0a12;color:#fbeaf1;border-radius:14px;padding:16px;font:14px/1.6 ui-monospace,Menlo,monospace}
+.urlb{background:#2b1220;border-radius:99px;padding:6px 14px;display:flex;align-items:center;gap:8px;margin-bottom:12px;overflow:hidden;white-space:nowrap}
+.urlb .ic{color:#2fbf71}
+.term .row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.term .btn{font-size:13px;padding:5px 12px;color:#ff9cc6;border-color:#ff9cc6}
+.term .btn:hover{background:#ff4d94;color:#fff}
+#out{min-height:3.4em}.ok{color:#2fbf71}.no{color:#ff7a8a}
+@media(max-width:760px){.sec{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.sgi{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.sgi .ic{width:30px;height:30px;color:var(--ac);margin-bottom:4px}
+.sgi b{font:600 17px Fraunces,serif}.sgi span{color:var(--mut);font-size:14px}
+.modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:rgba(14,5,9,.6);backdrop-filter:blur(4px);padding:20px}
+.modal[hidden]{display:none}
+.mbox{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:34px 28px;max-width:540px;width:100%;max-height:92vh;overflow:auto;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.mbox .sub{margin-bottom:20px}
+.x{position:absolute;top:10px;right:14px;font-size:28px;line-height:1;background:none;border:0;color:var(--mut);cursor:pointer}
+.x:hover{color:var(--ac)}
+.hide{display:none!important}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.stack h3{font-size:18px;margin-bottom:8px}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.about p{color:var(--mut)}
+.facts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.facts li{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;font-size:15px}
+.facts b{display:block;font:600 16px Fraunces,serif}
+.facts span{color:var(--mut);font-size:14px}
+form{display:grid;gap:12px;max-width:560px;margin-top:22px}
+input,textarea{font:inherit;width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+footer{padding:28px 0;border-top:1px solid var(--bd);color:var(--mut);font-size:14px;text-align:center}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(90px);background:var(--ac);color:#fff;padding:10px 18px;border-radius:99px;transition:.3s;z-index:99}
+#toast.s{transform:translateX(-50%)}
+@media(max-width:760px){.hero .w,.case,.about{grid-template-columns:1fr}.case:nth-of-type(even) .vis{order:0}.case .vis{min-height:190px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol><symbol id="i-route" viewBox="0 0 24 24"><path d="M12 3v18M5 7h10l3 3-3 3H5z"/></symbol><symbol id="i-db" viewBox="0 0 24 24"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><path d="M3 4h18v6H3zM3 14h18v6H3zM7 7h.01M7 17h.01"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 2h10v20H7zM11 18h2"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol><symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol><symbol id="i-layout" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></symbol><symbol id="i-git" viewBox="0 0 24 24"><path d="M6 3v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9a9 9 0 0 1-9 9"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 7l9 7 9-7"/></symbol><symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v12h-4zM14 13c0-3 4-4 6-2 1 1 1 2 1 4v6h-4"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.6 7.6a5.5 5.5 0 1 1-7.8 7.8 5.5 5.5 0 0 1 7.8-7.8zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol></defs></svg>
+<nav><div class="w">
+<b>MF</b>
+<a class="l" href="#casos" data-en="Success stories">Casos de éxito</a>
+<a class="l" href="#experiencia" data-en="Experience">Experiencia</a>
+<a class="l" href="#mas" data-en="More work">Más proyectos</a>
+<a class="l" href="#stack" data-en="Toolbox">Herramientas</a>
+<a class="l" href="#seguridad" data-en="Security">Seguridad</a>
+<a class="l" href="#sobre" data-en="About">Sobre mí</a>
+<a class="l" href="#contacto" data-open data-en="Contact">Contacto</a>
+<span class="sp"></span>
+<button class="btn" id="lang" aria-label="Idioma">EN</button>
+<button class="btn" id="theme" aria-label="Tema">🌙</button>
+</div></nav>
+
+<header class="hero"><div class="w">
+<div>
+<div class="live" data-en="Available for new opportunities">Disponible para nuevas oportunidades</div>
+<h1>María Fernanda<br><em>Rosas Briones</em></h1>
+<div class="role" id="role"></div>
+<p data-en="I design and build clear, intuitive interfaces and the software behind them. My work already runs in a real service and reaches 98.4% accuracy classifying ECG signals.">Transformo ideas en soluciones digitales que combinan diseño, tecnología y funcionalidad. Desarrollo experiencias intuitivas y aplicaciones que resuelven problemas reales, cuidando cada detalle para crear productos eficientes, atractivos y centrados en las personas.</p>
+<div class="cta"><a class="btn p" href="#casos"><svg class="ic"><use href="#i-chart"/></svg><span data-en="See my success stories">Ver casos de éxito</span></a><a class="btn" href="https://github.com/Fernanda200429" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>GitHub</a><a class="btn" href="https://www.linkedin.com/in/maria-fernanda-rosas-briones-624b55367" target="_blank" rel="noopener"><svg class="ic"><use href="#i-in"/></svg>LinkedIn</a><a class="btn" href="#contacto" data-open><svg class="ic"><use href="#i-mail"/></svg><span data-en="Contact">Contacto</span></a></div>
+<div class="stats"><div><i data-n="98.4" data-d="1">98.4</i>%<span data-en="ECG classification accuracy">exactitud en clasificación ECG</span></div><div>&lt;<i data-n="3" data-d="0">3</i> s<span data-en="load time, down from ~10 s">de carga, antes ~10 s</span></div><div><i data-n="7" data-d="0">7</i><span data-en="stages in my data pipeline">etapas en mi pipeline de datos</span></div></div>
+</div>
+</div></header>
+
+<section id="casos"><div class="w">
+<h2 data-en="Success stories">Casos de éxito</h2>
+<p class="sub" data-en="Three projects with real impact. For each one: the situation, my role, what I built and the measurable result.">Tres proyectos con impacto real. De cada uno explico la situación, mi rol, lo que construí y el resultado medible.</p>
+
+<article class="case">
+<div class="vis"><div><h3 data-en="Water service system">Sistema de servicio de agua</h3></div><div><div class="big">98.4%</div><span data-en="reading accuracy · in real operation">de exactitud en lecturas · en operación real</span></div></div>
+<div class="bd"><div class="meta" data-en="Web app · Dec 2024 · TSU internship">App web · Dic. 2024 · Estadía TSU</div>
+<dl>
+<div><dt data-en="Problem">Problema</dt><dd data-en="A water service operated with handwritten meter readings and billing, which was slow and error-prone.">Un servicio de agua operaba con lecturas de medidores y cobros hechos a mano, lo que era lento y propenso a errores.</dd></div>
+<div><dt data-en="My role">Mi rol</dt><dd data-en="I led the end-to-end development of the web app and designed its user interface.">Lideré el desarrollo end-to-end de la aplicación web y diseñé su interfaz de usuario.</dd></div>
+<div><dt data-en="What I built">Qué construí</dt><dd data-en="End-to-end web app and its UI: reading capture per meter, automatic consumption, PDF receipts and an admin panel with history per home.">Aplicación web end-to-end y su interfaz: registro de lecturas por medidor, consumo automático, recibos en PDF y panel administrativo con historial por vivienda.</dd></div>
+<div><dt data-en="Result">Resultado</dt><dd data-en="98.4% reading accuracy. The system was adopted and is in real operation, and readings are captured from the field.">98.4% de exactitud en el registro de lecturas. El sistema fue adoptado, opera en la vida real y las lecturas se capturan desde campo.</dd></div>
+</dl>
+<div class="tags"><span class="tag">MySQL</span><span class="tag" data-en="PDF generation">Generación de PDF</span><span class="tag">UI/UX</span><span class="tag" data-en="Responsive">Responsivo</span></div>
+<div class="repo"><a class="btn" href="https://github.com/Fernanda200429/DWASAAc-lamos" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg><span data-en="View repository">Ver repositorio</span></a></div></div>
+</article>
+
+<article class="case">
+<div class="vis"><div><h3 data-en="ECG classification">Clasificación de señales ECG</h3></div><div><div class="big">98.4%</div><span data-en="accuracy on arrhythmia vs normal rhythm">de exactitud en arritmias vs ritmos normales</span></div></div>
+<div class="bd"><div class="meta" data-en="Data & ML · May–Aug 2026 · CIDESI">Datos y ML · may.–ago. 2026 · CIDESI</div>
+<dl>
+<div><dt data-en="Problem">Problema</dt><dd data-en="12-lead ECG records carried mains interference that hides the real signal and makes them hard to analyze.">Los electrocardiogramas de 12 derivaciones traían interferencia de red que oculta la señal real y dificulta su análisis.</dd></div>
+<div><dt data-en="My role">Mi rol</dt><dd data-en="I developed the data pipeline, programmed it in Python and built the results visualization.">Desarrollé el pipeline de datos, lo programé en Python y construí la visualización de resultados.</dd></div>
+<div><dt data-en="What I built">Qué construí</dt><dd data-en="A 7-stage Python pipeline (loading, low-pass, notch and high-pass filtering, interpolation), a Random Forest classifier and a dashboard with a technical report.">Un pipeline de 7 etapas en Python (carga, filtrado pasa-bajo, notch y pasa-alta, interpolación), un clasificador Random Forest y un dashboard con reporte técnico.</dd></div>
+<div><dt data-en="Result">Resultado</dt><dd data-en="98.4% accuracy separating arrhythmia from normal rhythm. Mains interference was removed without altering the QRS pattern, and the center received a research-ready database.">98.4% de exactitud al distinguir arritmias de ritmos normales. La interferencia se eliminó sin alterar el patrón QRS y el centro recibió una base de datos lista para investigación.</dd></div>
+</dl>
+<div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Firebase</span><span class="tag" data-en="Signal processing">Procesamiento de señales</span></div>
+<div class="demo"><div class="seg" id="ecgm"><button class="on" data-m="raw" data-en="Noisy signal">Señal con ruido</button><button data-m="clean" data-en="After my filters">Tras mis filtros</button></div>
+<canvas id="ecg" role="img" aria-label="Simulated ECG signal"></canvas>
+<small data-en="Try it: this is what the filtering stage of my ECG project does.">Pruébalo: esto es lo que hace la etapa de filtrado de mi proyecto de ECG.</small></div>
+<div class="repo"><a class="btn" href="https://github.com/Fernanda200429/Clasificacion_de_senales_ECG_/tree/subida-proyecto" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg><span data-en="View repository">Ver repositorio</span></a><a class="chip" href="https://github.com/Fernanda200429/Clasificacion_de_senales_ECG_/tree/subida-proyecto/App" target="_blank" rel="noopener"><svg class="ic"><use href="#i-folder"/></svg> App</a><a class="chip" href="https://github.com/Fernanda200429/Clasificacion_de_senales_ECG_/tree/subida-proyecto/Correlaci%C3%B3n" target="_blank" rel="noopener"><svg class="ic"><use href="#i-folder"/></svg> Correlación</a><a class="chip" href="https://github.com/Fernanda200429/Clasificacion_de_senales_ECG_/tree/subida-proyecto/Extraccion%20de%20datos" target="_blank" rel="noopener"><svg class="ic"><use href="#i-folder"/></svg> Extracción de datos</a><a class="chip" href="https://github.com/Fernanda200429/Clasificacion_de_senales_ECG_/tree/subida-proyecto/Preparacion_Datos" target="_blank" rel="noopener"><svg class="ic"><use href="#i-folder"/></svg> Preparación de datos</a></div></div>
+</article>
+
+<article class="case">
+<div class="vis"><div><h3 data-en="Web redesign for Stein Metal">Rediseño web para Stein Metal</h3></div><div><div class="big">10→3 s</div><span data-en="page load time, before and after">tiempo de carga, antes y después</span></div></div>
+<div class="bd"><div class="meta" data-en="Frontend & UI/UX · Feb–Jul 2025">Frontend y UI/UX · feb.–jul. 2025</div>
+<dl>
+<div><dt data-en="Problem">Problema</dt><dd data-en="The company site loaded in about 10 seconds, navigation was unclear and the brand image was inconsistent.">El sitio de la empresa tardaba cerca de 10 segundos en cargar, la navegación era poco clara y la imagen de marca era inconsistente.</dd></div>
+<div><dt data-en="My role">Mi rol</dt><dd data-en="Frontend and UI/UX designer: I owned the interface redesign, the visual identity and the frontend optimization.">Diseñadora Frontend y UI/UX: me encargué del rediseño de la interfaz, la identidad visual y la optimización del frontend.</dd></div>
+<div><dt data-en="What I built">Qué construí</dt><dd data-en="New interface and visual identity, optimized frontend, real-time data entry and updates, and multilingual support. I fixed navigation friction together with users.">Nueva interfaz e identidad visual, frontend optimizado, registro y actualización de datos en tiempo real y soporte multilingüe. Resolví los puntos de fricción en la navegación junto con los usuarios.</dd></div>
+<div><dt data-en="Result">Resultado</dt><dd data-en="Load time cut from about 10 s to under 3 s, clearer navigation and a consistent corporate image.">Tiempo de carga reducido de ~10 s a menos de 3 s, navegación más clara e imagen corporativa coherente.</dd></div>
+</dl>
+<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div></div>
+</article>
+</div></section>
+
+<section id="experiencia"><div class="w">
+<h2 data-en="Professional experience">Experiencia profesional</h2>
+<p class="sub" data-en="The teams and roles where these projects came from, with what I did and what changed.">Los equipos y puestos donde nacieron estos proyectos, con lo que hice y lo que cambió.</p>
+<div class="tl">
+<div class="job"><div class="when" data-en="May 2026 – Aug 2026">may. 2026 – ago. 2026</div><h3 data-en="Data Developer · Professional internship">Desarrolladora de datos · Estadía profesional</h3><div class="org">CIDESI · Centro de Ingeniería y Desarrollo Industrial</div>
+<ul>
+<li data-en="Built an automated 7-stage Python pipeline (loading, low-pass, notch and high-pass filtering, interpolation) to process and validate 12-lead ECG records.">Desarrollé un pipeline automatizado de 7 etapas en Python (carga, filtrado pasa-bajo, notch y pasa-alta, interpolación) para procesar y validar electrocardiogramas de 12 derivaciones.</li>
+<li data-en="Trained a Random Forest model that classifies arrhythmias with 98.4% accuracy, removing mains interference without altering the QRS pattern.">Entrené un modelo Random Forest que clasifica arritmias con 98.4% de exactitud, eliminando la interferencia de red sin alterar el patrón QRS.</li>
+<li data-en="Delivered a dashboard with a technical report and a research-ready database.">Entregué un dashboard con reporte técnico y una base de datos lista para investigación.</li>
+</ul>
+<div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Firebase</span><span class="tag" data-en="Signal processing">Procesamiento de señales</span></div></div>
+<div class="job"><div class="when" data-en="Feb 2025 – Jul 2025">feb. 2025 – jul. 2025</div><h3 data-en="Frontend & UI/UX Designer">Diseñadora Frontend y UI/UX</h3><div class="org">Stein Metal</div>
+<ul>
+<li data-en="Redesigned the web interface and visual identity, improving navigation clarity and brand consistency.">Rediseñé la interfaz web y la identidad visual, mejorando la claridad de navegación y la coherencia de la imagen corporativa.</li>
+<li data-en="Optimized the frontend with HTML, CSS, JavaScript and Bootstrap, cutting load time from ~10 s to under 3 s.">Optimicé el frontend con HTML, CSS, JavaScript y Bootstrap, reduciendo el tiempo de carga de ~10 s a menos de 3 s.</li>
+<li data-en="Implemented real-time data entry and updates and added multilingual support, after resolving navigation friction points with users.">Implementé registro y actualización de datos en tiempo real e incorporé soporte multilingüe, tras resolver puntos de fricción en la navegación junto con usuarios.</li>
+</ul>
+<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">UI/UX</span></div></div>
+</div>
+</div></section>
+
+<section id="mas" class="alt"><div class="w">
+<h2 data-en="More work">Más proyectos</h2>
+<p class="sub" data-en="Smaller builds from my degree. Filter by type.">Proyectos más pequeños de mi carrera. Filtra por tipo.</p>
+<div class="filters" id="filters">
+<button class="chip on" data-f="all" data-en="All">Todos</button><button class="chip" data-f="web">Web</button><button class="chip" data-f="mobile" data-en="Mobile">Móvil</button><button class="chip" data-f="data" data-en="Data">Datos</button><button class="chip" data-f="iot">IoT</button>
+</div>
+<div class="grid" id="others">
+<div class="card" data-c="web"><h3 data-en="Installable PWA">PWA instalable</h3><p data-en="Works offline, with cache and push notifications.">Funciona sin conexión, con caché y notificaciones push.</p><div class="tags"><span class="tag">Service Workers</span><span class="tag">JavaScript</span></div></div>
+<div class="card" data-c="mobile"><h3 data-en="Mobile app">Aplicación móvil</h3><p data-en="Uses my own REST API and syncs in real time with Firebase.">Consume una API REST propia y sincroniza en tiempo real con Firebase.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Firebase</span></div></div>
+<div class="card" data-c="data"><h3 data-en="Data mining">Minería de datos</h3><p data-en="SQL analysis to find patterns and support decisions.">Análisis con SQL para encontrar patrones y apoyar decisiones.</p><div class="tags"><span class="tag">SQL</span></div></div>
+<div class="card" data-c="iot"><h3 data-en="IoT solution">Solución IoT</h3><p data-en="Connected devices for remote monitoring and control in real time.">Dispositivos conectados para monitoreo y control remoto en tiempo real.</p><div class="tags"><span class="tag">IoT</span><span class="tag">Firebase Realtime</span></div></div>
+<div class="card" data-c="mobile"><h3 data-en="Video game">Videojuego</h3><p data-en="State logic, collision detection and player experience control.">Lógica de estados, detección de colisiones y control de la experiencia del jugador.</p><div class="tags"><span class="tag">C#</span></div></div>
+<div class="card" data-c="web"><h3 data-en="Layered architecture">Arquitectura por capas</h3><p data-en="MVC design applying standards and quality metrics.">Diseño MVC aplicando estándares y métricas de calidad.</p><div class="tags"><span class="tag">MVC</span><span class="tag">PHP / CodeIgniter</span></div></div>
+</div>
+</div></section>
+
+<section id="stack"><div class="w">
+<h2 data-en="Toolbox">Herramientas</h2>
+<p class="sub" data-en="What I use to build, frontend first.">Lo que uso para construir, empezando por frontend.</p>
+<div class="stack">
+<div class="card"><h3>Frontend y UI/UX</h3><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">Bootstrap</span><span class="tag">Material UI</span><span class="tag">Figma</span><span class="tag">PWA</span></div></div>
+<div class="card"><h3>Backend y APIs</h3><div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">REST</span><span class="tag">OAuth</span><span class="tag">PHP</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">C++</span><span class="tag">Postman</span></div></div>
+<div class="card"><h3 data-en="Data & databases">Datos y bases de datos</h3><div class="tags"><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">scikit-learn</span></div></div>
+<div class="card"><h3 data-en="Mobile">Móvil</h3><div class="tags"><span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">Expo</span><span class="tag">Google Maps API</span></div></div>
+<div class="card"><h3 data-en="Security">Seguridad</h3><div class="tags"><span class="tag" data-en="Data encryption">Cifrado de datos</span><span class="tag">SQL Injection</span><span class="tag" data-en="Secure sessions">Sesiones seguras</span><span class="tag">SSL/TLS</span></div></div>
+<div class="card"><h3 data-en="Process">Proceso</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Scrum</span><span class="tag">Asana</span><span class="tag">Mendix</span></div></div>
+</div>
+</div></section>
+
+<section id="seguridad" class="alt"><div class="w" style="text-align:center">
+<h2 data-en="Security in development">Seguridad en el desarrollo</h2>
+<p class="sub" style="margin-inline:auto" data-en="Sign-in and data protection are part of every app I build.">El inicio de sesión y la protección de datos forman parte de cada app que construyo.</p>
+<div class="sg"><div class="sgi"><svg class="ic"><use href="#i-lock"/></svg><b data-en="SSL/TLS">SSL/TLS</b><span data-en="Information encrypted in transit">Información cifrada en tránsito</span></div><div class="sgi"><svg class="ic"><use href="#i-route"/></svg><b data-en="Protected routes">Rutas protegidas</b><span data-en="Access only with a valid session">Acceso solo con sesión válida</span></div><div class="sgi"><svg class="ic"><use href="#i-db"/></svg><b data-en="SQL injection">Inyección SQL</b><span data-en="Inputs treated as data">Entradas tratadas como datos</span></div><div class="sgi"><svg class="ic"><use href="#i-key"/></svg><b data-en="Sessions & OAuth">Sesiones y OAuth</b><span data-en="Secure authentication and sessions">Autenticación y sesiones seguras</span></div><div class="sgi"><svg class="ic"><use href="#i-shield"/></svg><b data-en="Data encryption">Cifrado de datos</b><span data-en="Sensitive data protected">Datos sensibles protegidos</span></div></div>
+</div></section>
+
+<section id="sobre"><div class="w">
+<h2 data-en="About me">Sobre mí</h2>
+<div class="about">
+<div>
+<p data-en="I'm a Software Development & Management Engineering graduate with a Higher Technical Degree in IT and a professional license. I specialize in frontend and UI/UX, and I like to understand the user's problem before I design anything: talk to people, prototype in Figma, build with clean code, then measure the result.">Soy egresada de Ingeniería en Desarrollo y Gestión de Software, con TSU en Tecnologías de la Información y cédula profesional. Me especializo en frontend y UI/UX, y me gusta entender el problema del usuario antes de diseñar: hablar con las personas, prototipar en Figma, construir con código limpio y medir el resultado.</p>
+<p data-en="I'm looking for my first full-time role in a team that values usability and quality.">Busco mi primer puesto de tiempo completo en un equipo que valore la usabilidad y la calidad.</p>
+</div>
+<ul class="facts">
+<li><b data-en="B.Eng. Software Development & Management">Ing. en Desarrollo y Gestión de Software</b><span data-en="UTEQ · GPA 9.04 · graduation expected Dec 2026">UTEQ · promedio 9.04 · graduación esperada dic. 2026</span></li>
+<li><b data-en="Higher Technical Degree in IT">TSU en Tecnologías de la Información</b><span data-en="UTEQ · earned, with professional license">UTEQ · titulada, con cédula profesional</span></li>
+<li><b data-en="Certifications">Certificaciones</b><span data-en="Cybersecurity (Santander) · Data Analysis with R (Google) · Rapid Developer (Mendix) · Cisco Packet Tracer">Ciberseguridad (Santander) · Análisis de Datos con R (Google) · Rapid Developer (Mendix) · Cisco Packet Tracer</span></li>
+<li><b data-en="Languages">Idiomas</b><span data-en="Spanish (native) · English (basic)">Español (nativo) · Inglés (básico)</span></li>
+</ul>
+</div>
+</div></section>
+
+<section id="contacto" class="alt"><div class="w" style="text-align:center">
+<h2 data-en="Let's build something together">Construyamos algo juntos</h2>
+<p class="sub" style="margin-inline:auto" data-en="Querétaro, México. Tell me about the role or project.">Querétaro, México. Cuéntame del puesto o proyecto.</p>
+<button class="btn p" data-open><svg class="ic"><use href="#i-mail"/></svg><span data-en="Contact me">Contáctame</span></button>
+</div></section>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="mt" hidden><div class="mbox">
+<button class="x" id="mx" aria-label="Cerrar">×</button>
+<h2 id="mt" data-en="Let's build something together">Construyamos algo juntos</h2>
+<p class="sub" style="margin-inline:auto" data-en="Querétaro, México. Tell me about the role or project.">Querétaro, México. Cuéntame del puesto o proyecto.</p>
+<div class="cta" style="justify-content:center;margin:0 0 20px"><button class="btn p" id="copy"><svg class="ic"><use href="#i-mail"/></svg>ferrosasrob@gmail.com</button><a class="btn" href="https://www.linkedin.com/in/maria-fernanda-rosas-briones-624b55367" target="_blank" rel="noopener"><svg class="ic"><use href="#i-in"/></svg>LinkedIn</a><a class="btn" href="https://github.com/Fernanda200429" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>GitHub</a></div>
+<form id="f" style="margin:auto;text-align:left">
+<input id="n" required placeholder="Nombre" data-enph="Name">
+<input id="m" type="email" required placeholder="Tu correo" data-enph="Your email">
+<textarea id="t" rows="4" required placeholder="Mensaje" data-enph="Message"></textarea>
+<button class="btn p" type="submit" data-en="Send message">Enviar mensaje</button>
+<p id="fs" role="status" style="margin:0;font-size:14px;color:var(--ac);text-align:center"></p>
+</form></div></div>
+<footer><div class="w">© 2026 María Fernanda Rosas Briones</div></footer>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+var $=function(q,r){return(r||document).querySelector(q)},$$=function(q,r){return[].slice.call((r||document).querySelectorAll(q))};
+var root=document.documentElement,lang="es",ri=0,ci=0,del=false;
+var roles={es:["Ingeniera en Desarrollo y Gestión de Software","Desarrolladora Frontend y UI/UX","Desarrolladora Backend y APIs","Desarrolladora móvil"],en:["Software Development & Management Engineer","Frontend & UI/UX Developer","Backend & API Developer","Mobile Developer"]};
+function st(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("s");setTimeout(function(){t.classList.remove("s")},2200)}
+$$("[data-en]").forEach(function(e){e.dataset.es=e.textContent});
+$$("[data-enph]").forEach(function(e){e.dataset.esph=e.placeholder});
+function setLang(l){lang=l;root.lang=l;
+$$("[data-en]").forEach(function(e){e.textContent=l==="en"?e.dataset.en:e.dataset.es});
+$$("[data-enph]").forEach(function(e){e.placeholder=l==="en"?e.dataset.enph:e.dataset.esph});
+$("#lang").textContent=l==="es"?"EN":"ES";ri=0;ci=0;del=false;st("lang",l)}
+function setTheme(t){root.dataset.theme=t;$("#theme").textContent=t==="dark"?"☀":"🌙";st("theme",t)}
+$("#lang").onclick=function(){setLang(lang==="es"?"en":"es")};
+$("#theme").onclick=function(){setTheme(root.dataset.theme==="dark"?"light":"dark")};
+(function tick(){var w=roles[lang][ri%roles[lang].length],el=$("#role");
+if(!del){ci++;el.textContent=w.slice(0,ci);if(ci>=w.length){del=true;return setTimeout(tick,1800)}}
+else{ci--;el.textContent=w.slice(0,ci);if(ci<=0){del=false;ri++}}
+setTimeout(tick,del?25:55)})();
+$$("#filters .chip").forEach(function(c){c.onclick=function(){$$("#filters .chip").forEach(function(x){x.classList.remove("on")});c.classList.add("on");
+$$("#others>[data-c]").forEach(function(p){p.classList.toggle("hide",c.dataset.f!=="all"&&p.dataset.c!==c.dataset.f)})}});
+$("#copy").onclick=function(){var m="ferrosasrob@gmail.com";try{navigator.clipboard.writeText(m).then(function(){toast(lang==="es"?"Correo copiado":"Email copied")},function(){location.href="mailto:"+m})}catch(e){location.href="mailto:"+m}};
+var TT={es:{sending:"Enviando…",ok:"¡Mensaje enviado! Te responderé pronto.",fail:"No se pudo enviar directo; abriendo tu app de correo…"},en:{sending:"Sending…",ok:"Message sent! I will reply soon.",fail:"Could not send directly; opening your email app…"}};
+$("#f").onsubmit=function(e){e.preventDefault();var n=$("#n").value,m=$("#m").value,t=$("#t").value,btn=$("#f button[type=submit]"),fs=$("#fs"),old=btn.textContent;
+btn.disabled=true;btn.textContent=TT[lang].sending;fs.textContent="";
+function fb(){fs.textContent=TT[lang].fail;location.href="mailto:ferrosasrob@gmail.com?subject="+encodeURIComponent("Portafolio · "+n)+"&body="+encodeURIComponent(t+"\n\n"+n+" <"+m+">")}
+fetch("https://formsubmit.co/ajax/ferrosasrob@gmail.com",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:n,email:m,message:t,_subject:"Portafolio · "+n,_replyto:m,_template:"table",_captcha:"false"})})
+.then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==="true")){fs.textContent=TT[lang].ok;toast(TT[lang].ok);$("#f").reset();setTimeout(closeM,2200)}else fb()})
+.catch(fb).then(function(){btn.disabled=false;btn.textContent=old})};
+(function(){var c=$("#ecg"),x=c.getContext("2d"),mode="raw",rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function g(t,m,w,a){return a*Math.exp(-Math.pow((t-m)/w,2))}
+function e(p){return g(p,.2,.025,.12)+g(p,.36,.008,-.12)+g(p,.4,.01,1)+g(p,.44,.01,-.25)+g(p,.65,.04,.28)}
+function draw(ts){var d=window.devicePixelRatio||1,W=c.width=c.clientWidth*d,H=c.height=150*d;x.clearRect(0,0,W,H);
+x.lineWidth=2*d;x.lineJoin="round";x.strokeStyle=getComputedStyle(root).getPropertyValue("--ac").trim()||"#d6336c";x.beginPath();
+for(var i=0;i<W;i+=2){var t=ts/1000+i/W*3,y=e((t%.9)/.9);if(mode==="raw")y+=.16*Math.sin(t*190)+.22*Math.sin(t*2)+.03*Math.sin(t*517);
+var py=H*.78-y*H*.6;i?x.lineTo(i,py):x.moveTo(i,py)}x.stroke();if(!rm)requestAnimationFrame(draw)}
+$$("#ecgm button").forEach(function(b){b.onclick=function(){$$("#ecgm button").forEach(function(o){o.classList.remove("on")});b.classList.add("on");mode=b.dataset.m;if(rm)draw(0)}});
+requestAnimationFrame(draw)})();
+var IC={frontend:"layout",backend:"server",data:"db",mobile:"phone",security:"shield",proc:"git",web:"code",iot:"server"};
+function ic(h,n){var t=h.textContent,sp=document.createElement("span");if(h.dataset.en){sp.dataset.en=h.dataset.en;sp.dataset.es=h.dataset.es;h.removeAttribute("data-en")}sp.textContent=t;h.textContent="";h.insertAdjacentHTML("beforeend",'<svg class="ic"><use href="#i-'+n+'"/></svg> ');h.appendChild(sp)}
+["layout","server","db","phone","shield","git"].forEach(function(n,i){var h=$$("#stack .card h3")[i];if(h)ic(h,n)});
+$$("#others>[data-c]").forEach(function(c){ic(c.querySelector("h3"),IC[c.dataset.c])});
+["drop","pulse","layout"].forEach(function(n,i){var h=$$(".case .vis h3")[i];if(h)ic(h,n)});
+$$(".card,.job,.case").forEach(function(e){e.classList.add("rv")});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add("in");io.unobserve(e.target);$$("[data-n]",e.target).forEach(cnt)})},{threshold:.15});
+function cnt(e){var n=+e.dataset.n,d=+e.dataset.d,t0=null;(function f(t){t0=t0||t;var q=Math.min((t-t0)/1300,1);e.textContent=(n*q).toFixed(d);if(q<1)requestAnimationFrame(f)})(performance.now())}
+$$(".rv").forEach(function(e){io.observe(e)});$$(".stats").forEach(function(e){io.observe(e)});$$(".big [data-n]").forEach(function(e){e.parentNode.classList.add("rv");io.observe(e.parentNode)});
+var md=$("#modal"),last=null;
+function openM(){last=document.activeElement;md.hidden=false;document.body.style.overflow="hidden";setTimeout(function(){$("#n").focus()},50)}
+function closeM(){md.hidden=true;document.body.style.overflow="";if(last)last.focus()}
+document.addEventListener("click",function(e){var o=e.target.closest&&e.target.closest("[data-open]");if(o){e.preventDefault();openM()}});
+$("#mx").onclick=closeM;md.onclick=function(e){if(e.target===md)closeM()};
+addEventListener("keydown",function(e){if(e.key==="Escape"&&!md.hidden)closeM()});
+var th=st("theme");setTheme(th==="dark"||th==="light"?th:(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"));
+if(st("lang")==="en")setLang("en");
+})();
+</script>
+</body>
+</html>
